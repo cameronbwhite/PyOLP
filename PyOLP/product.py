@@ -2,65 +2,140 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2013, Cameron White
 
-class Product():
+import api_objects
+
+class Product(api_objects.ApiObject):
 
     @property
     def age(self):
-        pass
+        """
+        :type: float
+        """
+        return self._age
 
     @property
     def bottles_per_case(self):
-        pass
+        """
+        :type: int
+        """
+        return self._bottles_per_case
 
     @property
     def code(self):
-        pass
+        """
+        :type: string
+        """
+        return self._code
 
     @property
     def created_at(self):
-        pass
+        """
+        :type: datetime
+        """
+        return self._created_at
     
     @property
     def description(self):
-        pass
+        """
+        :type: string
+        """
+        return self._description
 
     @property
     def id(self):
-        pass
+        """
+        :type: string
+        """
+        return self._id
 
     @property
     def modified_at(self):
-        pass
+        """
+        :type: datetime
+        """
+        return self._modified_at
 
     @property
     def on_sale(self):
-        pass
+        """
+        :type: bool
+        """
+        return self._on_sale
 
     @property
     def proof(self):
-        pass
-    
-    @property
-    def resource_uri(self):
-        pass
+        """
+        :type: float
+        """
+        return self._proof
     
     @property
     def size(self):
-        pass
+        """
+        :type: string
+        """
+        return self._size
 
     @property
     def slug(self):
-        pass
+        """
+        :type: string
+        """
+        return self._slug
 
     @property
     def status(self):
-        pass
+        """
+        :type: string
+        """
+        return self._status 
 
     @property
     def title(self):
-        pass
+        """
+        :type: string
+        """
+        return self._title
 
+    def _initAttributes(self):
+        self._age = api_objects.NotSet
+        self._bottles_per_case = api_objects.NotSet
+        self._code = api_objects.NotSet
+        self._created_at = api_objects.NotSet
+        self._description = api_objects.NotSet
+        self._id = api_objects.NotSet
+        self._modified_at = api_objects.NotSet
+        self._on_sale = api_objects.NotSet
+        self._proof = api_objects.NotSet
+        self._size = api_objects.NotSet
+        self._slug = api_objects.NotSet
+        self._status = api_objects.NotSet
+        self._title = api_objects.NotSet
 
-
-
-
+    def _useAttributes(self, attributes):
+        if "age" in attributes:
+            self._age = self._makeFloatAttribute(attributes["age"])
+        if "bottles_per_case" in attributes:
+            self._bottles_per_case = self._makeIntAttribute(attributes["bottles_per_case"])
+        if "code" in attributes:
+            self._code = self._makeStringAttribute(attributes["code"])
+        if "created_at" in attributes:
+            self._created_at = self._makeDatetimeAttribute(attributes["created_at"])
+        if "description" in attributes:
+            self._description = self._makeStringAttribute(attributes["description"])
+        if "id" in attributes:
+            self._id = self._makeStringAttribute(attributes["id"])
+        if "modified_at" in attributes:
+            self._modified_at = self._makeDatetimeAttribute(attributes["modified_at"])
+        if "on_sale" in attributes:
+            self._on_sale = self._makeBoolAttribute(attributes["on_sale"])
+        if "proof" in attributes:
+            self._proof = self._makeFloatAttribute(attributes["proof"])
+        if "size" in attributes:
+            self._size = self._makeStringAttribute(attributes["size"])
+        if "slug" in attributes:
+            self._slug = self._makeStringAttribute(attributes["slug"])
+        if "status" in attributes:
+            self._status = self._makeStringAttribute(attributes["status"])
+        if "title" in attributes:
+            self._title = self._makeStringAttribute(attributes["title"])
