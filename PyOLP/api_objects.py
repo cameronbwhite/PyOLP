@@ -78,7 +78,7 @@ class ApiObject(object):
 
     @staticmethod
     def _makeDatetimeAttribute(value):
-        d = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S")
+        d = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
         return ApiObject.__makeSimpleAttribute(value, datetime.datetime)
 
     @property
