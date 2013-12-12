@@ -8,6 +8,16 @@ Python library implementing the Oregon Liquor Prices V1 API
 ```python
 >>> p = PyOPl()
 
+# Get all the products that are 90 proof and are on sale
+>>> for product in p.get_products(proof=90.0, on_sale=True):
+...     print(product.title)
+Bulleit 95 Rye
+Bulleit Bourbon Frontier
+C.m. Parrot Bay Coconut 90
+George Dickel #12
+Korbel Gold Reserve Vsop
+Metaxa Ouzo
+
 product = p.get_product('171')
 >>> product.id
 u'171'
