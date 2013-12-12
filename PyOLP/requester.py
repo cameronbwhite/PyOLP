@@ -30,21 +30,20 @@ class Requester:
         self.__hostname = o.hostname
         self.__port = o.port
     
-    def requestJsonAndCheck(self, verb, url, parameters=None, requestHeaders=None, input=None):
-        return self.__check(*self.requestJson(verb, url, parameters, requestHeaders, input))
+    def requestJsonAndCheck(self, url, parameters=None, requestHeaders=None):
+        return self.__check(*self.requestJson(url, parameters, requestHeaders))
 
-    def requestJson(self, verb, url, parameters=None, requestHeaders=None, input=None):
+    def requestJson(self, url, parameters=None, requestHeaders=None):
         
         parameters = dict(parameters) if parameters else {}
         requestHeaders = dict(requestHeaders) if requestHeaders else {}
-        input = urllib.urlencode(input) if input else None
         
         if parameters:        
             url = self.__addParametersToUrl(url, parameters)
 
         connection = httplib.HTTPConnection(self.__hostname, self.__port)
 
-        connection.request(verb, url, input, requestHeaders)
+        connection.request("Get", url, None, requestHeaders)
         response = connection.getresponse()
 
         status = response.status

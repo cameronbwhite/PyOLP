@@ -37,7 +37,6 @@ class PyOPl:
         """
         assert isinstance(id, str), id
         headers, data = self.__requester.requestJsonAndCheck(
-            "GET",
             "/api/v1/product/" + str(id) + "/"
         )
         return Product(self.__requester, headers, data)
@@ -50,7 +49,6 @@ class PyOPl:
         """
         assert isinstance(id, str), id
         headers, data = self.__requester.requestJsonAndCheck(
-            "GET",
             "/api/v1/store/" + str(id) + "/"
         )
         return Store(self.__requester, headers, data)
@@ -63,7 +61,6 @@ class PyOPl:
         """
         assert isinstance(id, str), id
         headers, data = self.__requester.requestJsonAndCheck(
-            "GET",
             "/api/v1/price/" + str(id) + "/"
         )
         return Price(self.__requester, headers, data)
