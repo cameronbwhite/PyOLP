@@ -24,98 +24,98 @@ class Product(api_objects.ApiObject):
         """
         :type: float
         """
-        return self._age
+        return self._age.value
 
     @property
     def bottles_per_case(self):
         """
         :type: int
         """
-        return self._bottles_per_case
+        return self._bottles_per_case.value
 
     @property
     def code(self):
         """
         :type: string
         """
-        return self._code
+        return self._code.value
 
     @property
     def created_at(self):
         """
         :type: datetime
         """
-        return self._created_at
+        return self._created_at.value
     
     @property
     def description(self):
         """
         :type: string
         """
-        return self._description
+        return self._description.value
 
     @property
     def id(self):
         """
         :type: string
         """
-        return self._id
+        return self._id.value
 
     @property
     def modified_at(self):
         """
         :type: datetime
         """
-        return self._modified_at
+        return self._modified_at.value
 
     @property
     def on_sale(self):
         """
         :type: bool
         """
-        return self._on_sale
+        return self._on_sale.value
 
     @property
     def proof(self):
         """
         :type: float
         """
-        return self._proof
+        return self._proof.value
     
     @property
     def resource_uri(self):
         """
         :type: string
         """
-        return self._resource_uri
+        return self._resource_uri.value
 
     @property
     def size(self):
         """
         :type: string
         """
-        return self._size
+        return self._size.value
 
     @property
     def slug(self):
         """
         :type: string
         """
-        return self._slug
+        return self._slug.value
 
     @property
     def status(self):
         """
         :type: string
         """
-        return self._status 
+        return self._status.value
 
     @property
     def title(self):
         """
         :type: string
         """
-        return self._title
+        return self._title.value
 
     def _initAttributes(self):
         self._age = api_objects.NotSet

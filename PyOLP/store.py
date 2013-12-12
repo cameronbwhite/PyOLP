@@ -24,77 +24,77 @@ class Store(api_objects.ApiObject):
         """
         :type: string
         """
-        return self._address
+        return self._address.value
 
     @property
     def address_raw(self):
         """
         :type: string
         """
-        return self._address_raw
+        return self._address_raw.value
 
     @property
     def county(self):
         """
         :type: string
         """
-        return self._county
+        return self._county.value
 
     @property
     def hours_raw(self):
         """
         :type: string
         """
-        return self._hours_raw
+        return self._hours_raw.value
 
     @property
     def id(self):
         """
         :type: string
         """
-        return self._id
+        return self._id.value
     
     @property
     def key(self):
         """
         :type: int
         """
-        return self._key
+        return self._key.value
     
     @property
     def latitude(self):
         """
         :type: float
         """
-        return self._latitude
+        return self._latitude.value
     
     @property
     def longitude(self):
         """
         :type: float
         """
-        return self._longitude
+        return self._longitude.value
 
     @property
     def name(self):
         """
         :type: string
         """
-        return self._name
+        return self._name.value
 
     @property
     def phone(self):
         """
         :type: string
         """
-        return self._phone
+        return self._phone.value
 
     @property
     def resource_uri(self):
         """
         :type: string
         """
-        return self._resource_uri
+        return self._resource_uri.value
 
     def _initAttributes(self):
         self._address = api_objects.NotSet

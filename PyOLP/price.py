@@ -24,49 +24,49 @@ class Price(api_objects.ApiObject):
         """
         :type: float
         """
-        return self._amount 
+        return self._amount.value
 
     @property
     def created_at(self):
         """
         :type: datetime
         """
-        return self._created_at
+        return self._created_at.value
 
     @property
     def effective_date(self):
         """
         :type: datetime
         """
-        return self._effective_date
+        return self._effective_date.value
 
     @property
     def id(self):
         """
         :type: string
         """
-        return self._id
+        return self._id.value
     
     @property
     def modified_at(self):
         """
         :type: datetime
         """
-        return self._modified_at
+        return self._modified_at.value
 
     @property
     def product(self):
         """
         :type: related
         """
-        return self._product
+        return self._product.value
 
     @property
     def resource_uri(self):
         """
         :type: string
         """
-        return self._resource_uri
+        return self._resource_uri.value
 
     def _initAttributes(self):
         self._amount = api_objects.NotSet
