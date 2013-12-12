@@ -16,6 +16,8 @@
 # along with PyGithub. If not, see <http://www.gnu.org/licenses/>.
 
 import api_objects
+from requester import Requester
+import product
 
 class Price(api_objects.ApiObject):
 
@@ -67,6 +69,13 @@ class Price(api_objects.ApiObject):
         :type: string
         """
         return self._resource_uri.value
+    
+    def get_product(self):
+
+        headers, data = self._requester.requestJsonAndCheck(
+            self.product
+        )
+        return product.Product(self._requester, headers, data)
 
     def _initAttributes(self):
         self._amount = api_objects.NotSet
