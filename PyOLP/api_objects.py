@@ -105,7 +105,6 @@ class ApiObject(object):
     def update(self):
 
         status, responseHeaders, output = self._requester.requestJson(
-            "GET",
              self._resource_uri.value, # virtual
         )
 
