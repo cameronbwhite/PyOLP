@@ -1,0 +1,191 @@
+{
+    "meta": {
+        "limit": 20, 
+        "next": "/api/v1/price/?limit=20&offset=20", 
+        "offset": 0, 
+        "previous": null, 
+        "total_count": 91472
+    }, 
+    "objects": [
+        {
+            "amount": "17.95", 
+            "created_at": "2013-11-15T04:02:57.650431", 
+            "effective_date": "2013-12-01", 
+            "id": "119011", 
+            "modified_at": "2013-11-15T04:02:57.650466", 
+            "product": "/api/v1/product/4162/", 
+            "resource_uri": "/api/v1/price/119011/"
+        }, 
+        {
+            "amount": "92.95", 
+            "created_at": "2013-11-15T04:02:57.699148", 
+            "effective_date": "2013-12-01", 
+            "id": "119012", 
+            "modified_at": "2013-11-15T04:02:57.699174", 
+            "product": "/api/v1/product/2246/", 
+            "resource_uri": "/api/v1/price/119012/"
+        }, 
+        {
+            "amount": "70.95", 
+            "created_at": "2013-11-15T04:02:57.723602", 
+            "effective_date": "2013-12-01", 
+            "id": "119013", 
+            "modified_at": "2013-11-15T04:02:57.723624", 
+            "product": "/api/v1/product/1/", 
+            "resource_uri": "/api/v1/price/119013/"
+        }, 
+        {
+            "amount": "4.50", 
+            "created_at": "2013-11-15T04:02:57.751938", 
+            "effective_date": "2013-12-01", 
+            "id": "119014", 
+            "modified_at": "2013-11-15T04:02:57.751960", 
+            "product": "/api/v1/product/4163/", 
+            "resource_uri": "/api/v1/price/119014/"
+        }, 
+        {
+            "amount": "7.00", 
+            "created_at": "2013-11-15T04:02:57.772691", 
+            "effective_date": "2013-12-01", 
+            "id": "119015", 
+            "modified_at": "2013-11-15T04:02:57.772709", 
+            "product": "/api/v1/product/2/", 
+            "resource_uri": "/api/v1/price/119015/"
+        }, 
+        {
+            "amount": "0.50", 
+            "created_at": "2013-11-15T04:02:57.791670", 
+            "effective_date": "2013-12-01", 
+            "id": "119016", 
+            "modified_at": "2013-11-15T04:02:57.791688", 
+            "product": "/api/v1/product/3/", 
+            "resource_uri": "/api/v1/price/119016/"
+        }, 
+        {
+            "amount": "17.95", 
+            "created_at": "2013-11-15T04:02:57.819783", 
+            "effective_date": "2013-12-01", 
+            "id": "119017", 
+            "modified_at": "2013-11-15T04:02:57.819801", 
+            "product": "/api/v1/product/4/", 
+            "resource_uri": "/api/v1/price/119017/"
+        }, 
+        {
+            "amount": "32.00", 
+            "created_at": "2013-11-15T04:02:57.844034", 
+            "effective_date": "2013-12-01", 
+            "id": "119018", 
+            "modified_at": "2013-11-15T04:02:57.844081", 
+            "product": "/api/v1/product/5/", 
+            "resource_uri": "/api/v1/price/119018/"
+        }, 
+        {
+            "amount": "25.00", 
+            "created_at": "2013-11-15T04:02:57.867986", 
+            "effective_date": "2013-12-01", 
+            "id": "119019", 
+            "modified_at": "2013-11-15T04:02:57.868075", 
+            "product": "/api/v1/product/6/", 
+            "resource_uri": "/api/v1/price/119019/"
+        }, 
+        {
+            "amount": "19.95", 
+            "created_at": "2013-11-15T04:02:57.892789", 
+            "effective_date": "2013-12-01", 
+            "id": "119020", 
+            "modified_at": "2013-11-15T04:02:57.892820", 
+            "product": "/api/v1/product/7/", 
+            "resource_uri": "/api/v1/price/119020/"
+        }, 
+        {
+            "amount": "11.95", 
+            "created_at": "2013-11-15T04:02:57.920023", 
+            "effective_date": "2013-12-01", 
+            "id": "119021", 
+            "modified_at": "2013-11-15T04:02:57.920046", 
+            "product": "/api/v1/product/8/", 
+            "resource_uri": "/api/v1/price/119021/"
+        }, 
+        {
+            "amount": "19.95", 
+            "created_at": "2013-11-15T04:02:57.944039", 
+            "effective_date": "2013-12-01", 
+            "id": "119022", 
+            "modified_at": "2013-11-15T04:02:57.944063", 
+            "product": "/api/v1/product/9/", 
+            "resource_uri": "/api/v1/price/119022/"
+        }, 
+        {
+            "amount": "11.95", 
+            "created_at": "2013-11-15T04:02:57.966567", 
+            "effective_date": "2013-12-01", 
+            "id": "119023", 
+            "modified_at": "2013-11-15T04:02:57.966585", 
+            "product": "/api/v1/product/10/", 
+            "resource_uri": "/api/v1/price/119023/"
+        }, 
+        {
+            "amount": "57.45", 
+            "created_at": "2013-11-15T04:02:57.987695", 
+            "effective_date": "2013-12-01", 
+            "id": "119024", 
+            "modified_at": "2013-11-15T04:02:57.987712", 
+            "product": "/api/v1/product/4164/", 
+            "resource_uri": "/api/v1/price/119024/"
+        }, 
+        {
+            "amount": "52.45", 
+            "created_at": "2013-11-15T04:02:58.007627", 
+            "effective_date": "2013-12-01", 
+            "id": "119025", 
+            "modified_at": "2013-11-15T04:02:58.007645", 
+            "product": "/api/v1/product/4165/", 
+            "resource_uri": "/api/v1/price/119025/"
+        }, 
+        {
+            "amount": "26.90", 
+            "created_at": "2013-11-15T04:02:58.029820", 
+            "effective_date": "2013-12-01", 
+            "id": "119026", 
+            "modified_at": "2013-11-15T04:02:58.029853", 
+            "product": "/api/v1/product/4166/", 
+            "resource_uri": "/api/v1/price/119026/"
+        }, 
+        {
+            "amount": "26.90", 
+            "created_at": "2013-11-15T04:02:58.051125", 
+            "effective_date": "2013-12-01", 
+            "id": "119027", 
+            "modified_at": "2013-11-15T04:02:58.051153", 
+            "product": "/api/v1/product/4167/", 
+            "resource_uri": "/api/v1/price/119027/"
+        }, 
+        {
+            "amount": "22.50", 
+            "created_at": "2013-11-15T04:02:58.076832", 
+            "effective_date": "2013-12-01", 
+            "id": "119028", 
+            "modified_at": "2013-11-15T04:02:58.076855", 
+            "product": "/api/v1/product/4168/", 
+            "resource_uri": "/api/v1/price/119028/"
+        }, 
+        {
+            "amount": "19.00", 
+            "created_at": "2013-11-15T04:02:58.109137", 
+            "effective_date": "2013-12-01", 
+            "id": "119029", 
+            "modified_at": "2013-11-15T04:02:58.109174", 
+            "product": "/api/v1/product/2151/", 
+            "resource_uri": "/api/v1/price/119029/"
+        }, 
+        {
+            "amount": "3.50", 
+            "created_at": "2013-11-15T04:02:58.137025", 
+            "effective_date": "2013-12-01", 
+            "id": "119030", 
+            "modified_at": "2013-11-15T04:02:58.137058", 
+            "product": "/api/v1/product/2247/", 
+            "resource_uri": "/api/v1/price/119030/"
+        }
+    ]
+}

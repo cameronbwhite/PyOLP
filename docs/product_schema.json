@@ -1,0 +1,146 @@
+{
+    "allowed_detail_http_methods": [
+        "get"
+    ], 
+    "allowed_list_http_methods": [
+        "get"
+    ], 
+    "default_format": "application/json", 
+    "default_limit": 20, 
+    "fields": {
+        "age": {
+            "blank": false, 
+            "default": 0, 
+            "help_text": "Age in years", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "decimal", 
+            "unique": false
+        }, 
+        "bottles_per_case": {
+            "blank": false, 
+            "default": 0, 
+            "help_text": "Integer data. Ex: 2673", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "integer", 
+            "unique": false
+        }, 
+        "code": {
+            "blank": false, 
+            "default": "No default provided.", 
+            "help_text": "Unicode string data. Ex: \"Hello World\"", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "string", 
+            "unique": true
+        }, 
+        "created_at": {
+            "blank": false, 
+            "default": "", 
+            "help_text": "A date & time as a string. Ex: \"2010-11-10T03:07:43\"", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "datetime", 
+            "unique": false
+        }, 
+        "description": {
+            "blank": false, 
+            "default": "", 
+            "help_text": "Unicode string data. Ex: \"Hello World\"", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "string", 
+            "unique": false
+        }, 
+        "id": {
+            "blank": false, 
+            "default": "", 
+            "help_text": "Unicode string data. Ex: \"Hello World\"", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "string", 
+            "unique": true
+        }, 
+        "modified_at": {
+            "blank": false, 
+            "default": "", 
+            "help_text": "A date & time as a string. Ex: \"2010-11-10T03:07:43\"", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "datetime", 
+            "unique": false
+        }, 
+        "on_sale": {
+            "blank": false, 
+            "default": false, 
+            "help_text": "Boolean data. Ex: True", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "boolean", 
+            "unique": false
+        }, 
+        "proof": {
+            "blank": false, 
+            "default": 0, 
+            "help_text": "Fixed precision numeric data. Ex: 26.73", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "decimal", 
+            "unique": false
+        }, 
+        "resource_uri": {
+            "blank": false, 
+            "default": "No default provided.", 
+            "help_text": "Unicode string data. Ex: \"Hello World\"", 
+            "nullable": false, 
+            "readonly": true, 
+            "type": "string", 
+            "unique": false
+        }, 
+        "size": {
+            "blank": false, 
+            "default": "", 
+            "help_text": "Bottle size", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "string", 
+            "unique": false
+        }, 
+        "slug": {
+            "blank": false, 
+            "default": "No default provided.", 
+            "help_text": "Unicode string data. Ex: \"Hello World\"", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "string", 
+            "unique": true
+        }, 
+        "status": {
+            "blank": false, 
+            "default": "", 
+            "help_text": "Unicode string data. Ex: \"Hello World\"", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "string", 
+            "unique": false
+        }, 
+        "title": {
+            "blank": false, 
+            "default": "No default provided.", 
+            "help_text": "Unicode string data. Ex: \"Hello World\"", 
+            "nullable": false, 
+            "readonly": false, 
+            "type": "string", 
+            "unique": false
+        }
+    }, 
+    "filtering": {
+        "code": 1, 
+        "on_sale": 1, 
+        "proof": 1, 
+        "size": 1, 
+        "status": 1, 
+        "title": 1
+    }
+}
