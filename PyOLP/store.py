@@ -89,6 +89,13 @@ class Store(api_objects.ApiObject):
         """
         return self._phone
 
+    @property
+    def resource_uri(self):
+        """
+        :type: string
+        """
+        return self._resource_uri
+
     def _initAttributes(self):
         self._address = api_objects.NotSet
         self._address_raw = api_objects.NotSet
@@ -100,6 +107,7 @@ class Store(api_objects.ApiObject):
         self._longitude = api_objects.NotSet
         self._name = api_objects.NotSet
         self._phone = api_objects.NotSet
+        self._resource_uri = api_objects.NotSet
 
     def _useAttributes(self, attributes):
         if "address" in attributes:
@@ -122,4 +130,5 @@ class Store(api_objects.ApiObject):
             self._name = self._makeStringAttribute(attributes["name"])
         if "phone" in attributes:
             self._phone = self._makeStringAttribute(attributes["phone"])
-
+        if "resource_uri" in attributes:
+            self._resource_uri = self._makeStringAttribute(attributes["resource_uri"])

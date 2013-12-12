@@ -83,6 +83,13 @@ class Product(api_objects.ApiObject):
         return self._proof
     
     @property
+    def resource_uri(self):
+        """
+        :type: string
+        """
+        return self._resource_uri
+
+    @property
     def size(self):
         """
         :type: string
@@ -120,6 +127,7 @@ class Product(api_objects.ApiObject):
         self._modified_at = api_objects.NotSet
         self._on_sale = api_objects.NotSet
         self._proof = api_objects.NotSet
+        self._resource_uri = api_objects.NotSet
         self._size = api_objects.NotSet
         self._slug = api_objects.NotSet
         self._status = api_objects.NotSet
@@ -144,6 +152,8 @@ class Product(api_objects.ApiObject):
             self._on_sale = self._makeBoolAttribute(attributes["on_sale"])
         if "proof" in attributes:
             self._proof = self._makeFloatAttribute(attributes["proof"])
+        if "resource_uri" in attributes:
+            self._resource_uri = self._makeStringAttribute(attributes["resource_uri"])
         if "size" in attributes:
             self._size = self._makeStringAttribute(attributes["size"])
         if "slug" in attributes:

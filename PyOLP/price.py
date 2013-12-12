@@ -61,12 +61,21 @@ class Price(api_objects.ApiObject):
         """
         return self._product
 
+    @property
+    def resource_uri(self):
+        """
+        :type: string
+        """
+        return self._resource_uri
+
     def _initAttributes(self):
         self._amount = api_objects.NotSet
         self._created_at = api_objects.NotSet
         self._effective_date = api_objects.NotSet
         self._id = api_objects.NotSet
         self._modified_at = api_objects.NotSet
+        self._product = api_objects.NotSet
+        self._resource_uri = api_objects.NotSet
 
     def _useAttributes(self, attributes):
         if "amount" in attributes:
@@ -79,3 +88,7 @@ class Price(api_objects.ApiObject):
             self._id = self._makeStringAttribute(attributes["id"])
         if "modified_at" in attributes:
             self._modified_at = self._makeDatetimeAttribute(attributes["modified_at"])
+        if "product" in attributes:
+            self._product = self._makeStringAttribute(attributes["product"])
+        if "resource_uri" in attributes:
+            self._resource_uri = self._makeStringAttribute(attributes["resource_uri"])
