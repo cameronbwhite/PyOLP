@@ -9,7 +9,6 @@ Python library implementing the Oregon Liquor Prices V1 API
 >>> p = PyOPl()
 
 product = p.get_product('171')
-
 >>> product.id
 u'171'
 >>> product.title
