@@ -23,8 +23,6 @@ class PaginatedList():
         self.__contentClass = contentClass
         self.__uri = uri
         self.__parameters = parameters
-        self.__next_uri = None
-        self.__next_parameters = None
         
         self.__getFirstPage()
 
@@ -42,7 +40,8 @@ class PaginatedList():
     def __getFirstPage(self):
         
         headers, data = self.__requester.requestJsonAndCheck(
-                self.__uri
+                self.__uri,
+                self.__parameters
         )
 
         self.__parse(headers, data)
