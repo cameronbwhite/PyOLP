@@ -19,6 +19,7 @@ import api_exceptions
 import urllib
 import urlparse
 import httplib
+import json
 
 class Requester:
     
@@ -37,7 +38,7 @@ class Requester:
         parameters = dict(parameters) if parameters else {}
         requestHeaders = dict(requestHeaders) if requestHeaders else {}
         input = urllib.urlencode(input) if input else None
-
+        
         if parameters:        
             url = self.__addParametersToUrl(url, parameters)
 
@@ -52,7 +53,7 @@ class Requester:
         
         connection.close()
 
-        return status, responseHeaders, output
+        return status, responseHeaders, json.loads(output)
 
     def __check(self, status, responseHeaders, output):
         if status >= 400:
