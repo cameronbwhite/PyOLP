@@ -37,7 +37,7 @@ class _BadAttribute:
 
     @property
     def value(self):
-        raise api_exceptions.BadAttributeException(self.__value, self.__expectedType, self.__exception)
+        raise api_exceptions.BadAttributeException(self.__value, self.__expectedType)
 
 class ApiObject(object):
 
@@ -74,12 +74,19 @@ class ApiObject(object):
 
     @staticmethod
     def _makeFloatAttribute(value):
+        try:
+            value = float(value)
+        except ValueError:
+            pass
         return ApiObject.__makeSimpleAttribute(value, float)
 
     @staticmethod
     def _makeDatetimeAttribute(value):
-        d = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-        return ApiObject.__makeSimpleAttribute(value, datetime.datetime)
+        try:
+            d = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+        except ValueError:
+            d = datetime.datetime.strptime(value, "%Y-%m-%d")
+        return ApiObject.__makeSimpleAttribute(d, datetime.datetime)
 
     @property
     def raw_data(self):
