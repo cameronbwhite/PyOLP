@@ -17,4 +17,5 @@ u'Canadian Rich & Rare'
 >>> product.on_sale
 False
 >>> product.bottles_per_case
+24
 ```
