@@ -18,4 +18,14 @@ u'Canadian Rich & Rare'
 False
 >>> product.bottles_per_case
 24
+
+>>> store = p.get_store('243')
+>>> store.id
+u'243'
+>>> store.name
+u'Willamina Liquor'
+>>> store.address
+u'212 NE Main St, Willamina, OR 97396, USA'
+>>>store.hours_raw
+Out[23]: u'9-6 M-S; Closed Sunday'
 ```

@@ -51,7 +51,7 @@ class PyOPl:
         assert isinstance(id, str), id
         headers, data = self.__requester.requestJsonAndCheck(
             "GET",
-            "/api/v1/product/" + str(id) + "/"
+            "/api/v1/store/" + str(id) + "/"
         )
         return Store(self.__requester, headers, data)
 
