@@ -3,7 +3,7 @@ PyOLP
 
 Python library implementing the Oregon Liquor Prices V1 API
 
-## Examples ## 
+## Examples
 
 ```python
 >>> p = PyOPl()
@@ -27,5 +27,5 @@ u'Willamina Liquor'
 >>> store.address
 u'212 NE Main St, Willamina, OR 97396, USA'
 >>>store.hours_raw
-Out[23]: u'9-6 M-S; Closed Sunday'
+u'9-6 M-S; Closed Sunday'
 ```
