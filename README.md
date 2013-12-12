@@ -38,3 +38,9 @@ u'212 NE Main St, Willamina, OR 97396, USA'
 >>>store.hours_raw
 u'9-6 M-S; Closed Sunday'
 ```
+## Credit
+
+Special thanks to all the fantastic developers who worked on 
+https://github.com/jacquev6/PyGithub. This library used many
+idea from that that project including the overall architecture 
+and parts of the code.
