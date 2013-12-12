@@ -105,7 +105,7 @@ class ApiObject(object):
     def update(self):
 
         status, responseHeaders, output = self._requester.requestJson(
-             self._resource_uri.value, # virtual
+             self._resource_uri.value # virtual
         )
 
         headers, data = self._requester._Requester__check(status, responseHeaders, output)
