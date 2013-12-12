@@ -6,7 +6,7 @@ Python library implementing the Oregon Liquor Prices V1 API
 ## Examples
 
 ```python
->>> p = PyOPL()
+>>> p = PyOLP()
 
 # Get all the products that are 90 proof and are on sale
 >>> for product in p.get_products(proof=90.0, on_sale=True):
