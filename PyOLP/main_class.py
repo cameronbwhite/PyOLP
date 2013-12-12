@@ -25,7 +25,7 @@ from requester import Requester
 
 DEFAULT_BASE_URL = "http://www.oregonliquorprices.com"
 
-class PyOPl:
+class PyOPL:
 
     def __init__(self, base_url=DEFAULT_BASE_URL):
 
