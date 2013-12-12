@@ -34,6 +34,13 @@ class Requester:
 
     def requestJson(self, verb, url, parameters=None, requestHeaders=None, input=None):
         
+        parameters = dict(parameters) if parameters else {}
+        requestHeaders = dict(requestHeaders) if requestHeaders else {}
+        input = urllib.urlencode(input) if input else None
+
+        if parameters:        
+            url = self.__addParametersToUrl(url, parameters)
+
         connection = httplib.HTTPConnection(self.__hostname, self.__port)
 
         connection.request(verb, url, input, requestHeaders)
@@ -51,3 +58,10 @@ class Requester:
         if status >= 400:
             raise api_exceptions.ApiException(status, output)
         return responseHeaders, output
+    
+    @staticmethod
+    def __addParametersToUrl(url, parameters):
+        if len(parameters) == 0:
+            return url
+        else:
+            return url + "?" + urllib.urlencode(parameters)
