@@ -53,7 +53,7 @@ class PyOLP:
         :param proof: float
         :param status: string
         :param title: string
-        :rtype: :class: `product.Product`
+        :rtype: :class: `paginated.PaginatedList`
         """
         assert code is api_objects.NotSet or isinstance(code, str), code
         assert on_sale is api_objects.NotSet or isinstance(on_sale, bool), on_sale
@@ -93,7 +93,7 @@ class PyOLP:
     def get_stores(self):
         """
         :calls: `GET /api/v1/store/`
-        :rtype: :class: `store.Store`
+        :rtype: :class: `paginated.PaginatedList`
         """
         return PaginatedList(
             Store,
@@ -116,7 +116,7 @@ class PyOLP:
     def get_prices(self):
         """
         :calls: `GET /api/v1/price/`
-        :rtype: :class: `price.Price`
+        :rtype: :class: `paginated.PaginatedList`
         """
         return PaginatedList(
             Price,
