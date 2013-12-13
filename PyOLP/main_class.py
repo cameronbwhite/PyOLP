@@ -31,7 +31,7 @@ class PyOLP:
 
         self.__requester = Requester(base_url)
 
-    def get_product(self, id=None):
+    def get_product(self, id=api_objects.NotSet):
         """
         :calls: `GET /api/v1/product/`
         :param code: string
@@ -101,7 +101,7 @@ class PyOLP:
             '/api/v1/store/'
         )
 
-    def get_price(self, id=None):
+    def get_price(self, id=api_objects.NotSet):
         """
         :calls: `GET /api/v1/price/`
         :param id: string
@@ -113,13 +113,18 @@ class PyOLP:
         )
         return Price(self.__requester, headers, data)
 
-    def get_prices(self):
+    def get_prices(self, product_id=api_objects.NotSet):
         """
         :calls: `GET /api/v1/price/`
         :rtype: :class: `paginated.PaginatedList`
         """
+        assert product_id is api_objects.NotSet or isinstance(product_id, str), product_id
+        url_parameters = dict()
+        if product_id is not api_objects.NotSet:
+            url_parameters["product"] = product_id
         return PaginatedList(
             Price,
             self.__requester,
-            '/api/v1/price/'
+            '/api/v1/price/',
+            url_parameters
         )
