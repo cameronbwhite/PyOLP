@@ -3,6 +3,14 @@ PyOLP
 
 Python library implementing the Oregon Liquor Prices V1 API
 
+## Install
+
+PyOLP can be installed with pip
+
+```sh
+pip install PyOLP
+```
+
 ## Examples
 
 ```python
