@@ -22,8 +22,8 @@ setup(
         ('', ["COPYING", "COPYING.LESSER", "README.md"]),
     ],
     classifiers=[
-        "Development Status :: 1 - Beta",
-        "License :: OSI Approved :: GPL",
+        "Development Status :: 4 - Beta",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 2.7",
