@@ -15,10 +15,10 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with PyGithub. If not, see <http://www.gnu.org/licenses/>.
 
-from main_class import PyOLP
-from api_exceptions import BadAttributeException, ApiException
-from price import Price
-from product import Product
-from store import Store
+from .main_class import PyOLP
+from .api_exceptions import BadAttributeException, ApiException
+from .price import Price
+from .product import Product
+from .store import Store
 
 __version__ = '0.1.0'
