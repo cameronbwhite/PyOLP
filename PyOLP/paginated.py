@@ -26,17 +26,23 @@ class PaginatedList():
         
         self.__getFirstPage()
 
-    def __iter__(self):
-        
-        for element in self.__elements:
-            yield self.__contentClass(
-                    self.__requester, self.__headers, element)
-        while self.__next:
-            self.__getNextPage()
-            for element in self.__elements:
-                yield self.__contentClass(
-                    self.__requester, self.__headers, element)
-    
+    def _applyContentClass(self, element):
+        return self.__contentClass(
+            self.__requester, self.__headers, element)
+
+    def _isBiggerThan(self, index):
+        return len(self.__elements) > index or self.__couldGrow()
+
+    def __couldGrow(self):
+        if self.__next is None:
+            return False
+        else:
+            return True
+
+    def __fetchToIndex(self, index):
+        while len(self.__elements) <= index and self.__couldGrow():
+            self.__grow()
+
     def __getFirstPage(self):
         
         headers, data = self.__requester.requestJsonAndCheck(
@@ -44,7 +50,15 @@ class PaginatedList():
                 self.__parameters
         )
 
-        self.__parse(headers, data)
+        self.__elements = self.__parse(headers, data)
+
+    def __getitem__(self, index):
+        assert isinstance(index, (int, slice))
+        if isinstance(index, (int, long)):
+            self.__fetchToIndex(index)
+            return self.__elements[index]
+        else:
+            return self._Slice(self, index)
     
     def __getNextPage(self):
 
@@ -52,7 +66,22 @@ class PaginatedList():
                 self.__next
         )
 
-        self.__parse(headers, data)
+        return self.__parse(headers, data)
+
+    def __grow(self):
+        newElements = self.__getNextPage()
+        self.__elements += newElements
+        return newElements
+
+    def __iter__(self):
+        
+        for element in self.__elements:
+            yield self.__contentClass(
+                    self.__requester, self.__headers, element)
+        while self.__couldGrow():
+            self.__grow()
+            for element in self.__elements:
+                yield self._applyContentClass(element)
 
     def __parse(self, headers, data):
 
@@ -63,4 +92,24 @@ class PaginatedList():
         self.__offset = meta["offset"]
         self.__previous = meta["previous"]
         self.__total_count = meta["total_count"]
-        self.__elements = data["objects"]
+
+        return data["objects"]
+
+    class _Slice:
+        def __init__(self, theList, theSlice):
+            self.__list = theList
+            self.__start = theSlice.start or 0
+            self.__stop = theSlice.stop
+            self.__step = theSlice.step or 1
+
+        def __iter__(self):
+            index = self.__start
+            while not self.__finished(index):
+                if self.__list._isBiggerThan(index):
+                    yield self.__list._applyContentClass(self.__list[index])
+                    index += self.__step
+                else:
+                    return
+
+        def __finished(self, index):
+            return self.__stop is not None and index >= self.__stop
