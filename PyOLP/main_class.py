@@ -15,13 +15,9 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with PyGithub. If not, see <http://www.gnu.org/licenses/>.
 
-import api_exceptions
-import api_objects
-from paginated import PaginatedList
-from price import Price
-from product import Product
-from store import Store
-from requester import Requester
+from . import api_exceptions
+from .api_objects import NotSet, Price, Product, Store
+from .requester import Requester
 
 DEFAULT_BASE_URL = "http://www.oregonliquorprices.com"
 
@@ -31,21 +27,21 @@ class PyOLP:
 
         self.__requester = Requester(base_url)
 
-    def get_product(self, id=api_objects.NotSet):
+    def get_product(self, id=NotSet):
         """
         :calls: `GET /api/v1/product/`
         :param code: string
         :rtype: :class: `product.Product`
         """
-        assert id is api_objects.NotSet or isinstance(id, str), id
+        assert id is NotSet or isinstance(id, str), id
         headers, data = self.__requester.requestJsonAndCheck(
             "/api/v1/product/" + str(id) + "/"
         )
         return Product(self.__requester, headers, data)
 
-    def get_products(self, code=api_objects.NotSet,
-            on_sale=api_objects.NotSet, proof=api_objects.NotSet,
-            status=api_objects.NotSet, title=api_objects.NotSet):
+    def get_products(self, code=NotSet,
+            on_sale=NotSet, proof=NotSet,
+            status=NotSet, title=NotSet):
         """
         :calls: `GET /api/v1/product/`
         :param code: string
@@ -55,21 +51,21 @@ class PyOLP:
         :param title: string
         :rtype: :class: `paginated.PaginatedList`
         """
-        assert code is api_objects.NotSet or isinstance(code, str), code
-        assert on_sale is api_objects.NotSet or isinstance(on_sale, bool), on_sale
-        assert proof is api_objects.NotSet or isinstance(proof, (int, float)), proof
-        assert status is api_objects.NotSet or isinstance(status, str), status
-        assert title is api_objects.NotSet or isinstance(title, str), title
+        assert code is NotSet or isinstance(code, str), code
+        assert on_sale is NotSet or isinstance(on_sale, bool), on_sale
+        assert proof is NotSet or isinstance(proof, (int, float)), proof
+        assert status is NotSet or isinstance(status, str), status
+        assert title is NotSet or isinstance(title, str), title
         url_parameters = dict()
-        if code is not api_objects.NotSet:
+        if code is not NotSet:
             url_parameters["code"] = code
-        if on_sale is not api_objects.NotSet:
+        if on_sale is not NotSet:
             url_parameters["on_sale"] = on_sale
-        if proof is not api_objects.NotSet:
+        if proof is not NotSet:
             url_parameters["proof"] = proof
-        if status is not api_objects.NotSet:
+        if status is not NotSet:
             url_parameters["status"] = status
-        if title is not api_objects.NotSet:
+        if title is not NotSet:
             url_parameters["title"] = title
         return PaginatedList(
             Product,
@@ -78,13 +74,13 @@ class PyOLP:
             url_parameters
         )
 
-    def get_store(self, id=api_objects.NotSet):
+    def get_store(self, id=NotSet):
         """
         :calls: `GET /api/v1/store/`
         :param id: string
         :rtype: :class: `store.Store`
         """
-        assert id is api_objects.NotSet or isinstance(id, str), id
+        assert id is NotSet or isinstance(id, str), id
         headers, data = self.__requester.requestJsonAndCheck(
             "/api/v1/store/" + str(id) + "/"
         )
@@ -101,26 +97,26 @@ class PyOLP:
             '/api/v1/store/'
         )
 
-    def get_price(self, id=api_objects.NotSet):
+    def get_price(self, id=NotSet):
         """
         :calls: `GET /api/v1/price/`
         :param id: string
         :rtype: :class: `price.Price`
         """
-        assert id is api_objects.NotSet or isinstance(id, str), id
+        assert id is NotSet or isinstance(id, str), id
         headers, data = self.__requester.requestJsonAndCheck(
             "/api/v1/price/" + str(id) + "/"
         )
         return Price(self.__requester, headers, data)
 
-    def get_prices(self, product_id=api_objects.NotSet):
+    def get_prices(self, product_id=NotSet):
         """
         :calls: `GET /api/v1/price/`
         :rtype: :class: `paginated.PaginatedList`
         """
-        assert product_id is api_objects.NotSet or isinstance(product_id, str), product_id
+        assert product_id is NotSet or isinstance(product_id, str), product_id
         url_parameters = dict()
-        if product_id is not api_objects.NotSet:
+        if product_id is not NotSet:
             url_parameters["product"] = product_id
         return PaginatedList(
             Price,

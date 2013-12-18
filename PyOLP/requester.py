@@ -15,20 +15,26 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with PyGithub. If not, see <http://www.gnu.org/licenses/>.
 
-import api_exceptions
+from . import api_exceptions
 import urllib
-import urlparse
-import httplib
 import json
+
+try:
+    from urllib import urlopen
+except ImportError:
+    from urllib.request import urlopen
+
+try: 
+    from urlparse import urlparse 
+except ImportError:
+    from urllib.parse import urlparse
 
 class Requester:
     
     def __init__(self, base_url):
 
-        self.__base_url = base_url
-        o = urlparse.urlparse(base_url)
-        self.__hostname = o.hostname
-        self.__port = o.port
+        o = urlparse(base_url)
+        self.__base_url = o.geturl()
     
     def requestJsonAndCheck(self, url, parameters=None, requestHeaders=None):
         return self.__check(*self.requestJson(url, parameters, requestHeaders))
@@ -40,17 +46,22 @@ class Requester:
         
         if parameters:        
             url = self.__addParametersToUrl(url, parameters)
-
-        connection = httplib.HTTPConnection(self.__hostname, self.__port)
-
-        connection.request("Get", url, None, requestHeaders)
-        response = connection.getresponse()
-
-        status = response.status
-        responseHeaders = dict(response.getheaders())
-        output = response.read()
         
+        connection = urlopen(self.__base_url + url)
+
+        output = connection.read()
+
+        try:
+            responseHeaders = connection.headers.headers
+        except AttributeError:
+            responseHeaders = connection.headers.values()
+
+        status = connection.getcode()
+
         connection.close()
+        
+        if isinstance(output, bytes):
+            output = output.decode("utf-8")
 
         return status, responseHeaders, json.loads(output)
 

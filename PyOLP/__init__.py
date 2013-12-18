@@ -17,8 +17,6 @@
 
 from .main_class import PyOLP
 from .api_exceptions import BadAttributeException, ApiException
-from .price import Price
-from .product import Product
-from .store import Store
+from .api_objects import NotSet, Price, Product, Store
 
 __version__ = '0.1.0'
