@@ -6,4 +6,5 @@ python:
   - "3.3"
 
 # command to run tests
-script: nosetests
+script:
+  - python setup.py test
