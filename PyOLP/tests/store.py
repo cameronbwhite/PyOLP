@@ -19,7 +19,7 @@ import unittest
 
 from .. import PyOLP
 
-class TestSeqU(unittest.TestCase):
+class TestStore(unittest.TestCase):
 
     def setUp(self):
 
@@ -27,7 +27,7 @@ class TestSeqU(unittest.TestCase):
 
         self.store = self.OLP.get_store("1")
 
-    def test_attributes(self):
+    def test_attributes_values(self):
 
         self.assertEqual(self.store.address, '4219 Agness Rd, Rogue River - Siskiyou National Forest, Agness, OR 97406, USA')
         self.assertEqual(self.store.address_raw, '04219 Agness Rd 97406')
@@ -40,3 +40,16 @@ class TestSeqU(unittest.TestCase):
         self.assertEqual(self.store.name, 'Agness Liquor')
         self.assertEqual(self.store.phone, '(541) 247-7233')
         self.assertEqual(self.store.resource_uri, '/api/v1/store/1/')
+
+    def test_attributes_types(self):
+
+        self.assertTrue(isinstance(self.store.address, (str, unicode)))
+        self.assertTrue(isinstance(self.store.address_raw, (str, unicode)))
+        self.assertTrue(isinstance(self.store.county, (str, unicode)))
+        self.assertTrue(isinstance(self.store.hours_raw, (str, unicode)))
+        self.assertTrue(isinstance(self.store.id, (str, unicode)))
+        self.assertTrue(isinstance(self.store.key, (int, long)))
+        self.assertTrue(isinstance(self.store.latitude, float))
+        self.assertTrue(isinstance(self.store.longitude, float))
+        self.assertTrue(isinstance(self.store.phone, (str, unicode)))
+        self.assertTrue(isinstance(self.store.resource_uri, (str, unicode)))

@@ -19,16 +19,6 @@ from . import api_exceptions
 from .requester import Requester
 import datetime
 
-try:
-    long
-except NameError:
-    long = int
-
-try:
-    unicode
-except NameError:
-    unicode = str
-
 class _NotSetType:
     def __repr__(self):
         return "NotSet"

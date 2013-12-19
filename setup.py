@@ -20,9 +20,9 @@ if __name__ == "__main__":
             "PyOLP",
             "PyOLP.tests"
         ],
-        data_files=[
-            ('', ["COPYING", "COPYING.LESSER", "README.md"]),
-        ],
+        package_data={
+            'PyOLP': ["COPYING", "COPYING.LESSER", "README.md"],
+        },
         classifiers=[
             "Development Status :: 4 - Beta",
             "License :: OSI Approved :: GNU General Public License (GPL)",
@@ -32,4 +32,6 @@ if __name__ == "__main__":
             "Topic :: Software Development :: Libraries :: Python Modules",
         ],
         test_suite="PyOLP.tests.AllTests",
+        include_package_data=True,
+        use_2to3=True,
     )

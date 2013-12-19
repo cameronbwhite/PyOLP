@@ -16,3 +16,5 @@
 # along with PyGithub. If not, see <http://www.gnu.org/licenses/>.
 
 from .store import *
+from .product import *
+from .price import *
