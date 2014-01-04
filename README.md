@@ -11,7 +11,16 @@ PyOLP can be installed with pip
 pip install PyOLP
 ```
 
-## Examples
+## Documentation
+
+### Main Class
+`PyOLP`
+* `get_product(id)`
+* `get_price(id)`
+* `get_store(id)`
+* `get_products(code=NotSet, on_sale=NotSet, proof=NotSet, status=NotSet, title=NotSet)`
+* `get_prices()`
+* `get_stores(product_id=NotSet)`
 
 ```python
 >>> from PyOLP import PyOLP
@@ -26,8 +35,63 @@ C.m. Parrot Bay Coconut 90 $17.95
 George Dickel #12 $19.95
 Korbel Gold Reserve Vsop $16.95
 Metaxa Ouzo $16.45
+```
 
-product = p.get_product('171')
+### Models
+
+The API has three model class. The following is a list of each models properties and methods.
+
+* `Price`
+    * `amount`
+    * `created_at`
+    * `effective_date`
+    * `id`
+    * `modified_at`
+    * `product`
+    * `resource_uri`
+    * `get_product()`
+
+```python
+>>> from PyOLP import PyOLP
+>>> p = PyOLP()
+
+>>> price = product.get_price()
+
+>>> price.amount
+6.4
+>>> print(price.created_at)
+2012-09-23 23:59:53.057700
+>>> print(price.effective_date)
+2012-10-01 00:00:00
+>>> price.id
+u'171'
+>>> print(price.modified_at)
+2012-09-23 23:59:53.057717
+```
+
+* `Product`
+    * `age`
+    * `bottles_per_case`
+    * `code`
+    * `created_at`
+    * `description`
+    * `id`
+    * `modified_at`
+    * `on_sale`
+    * `proof`
+    * `resource_uri`
+    * `size`
+    * `slug`
+    * `status`
+    * `title`
+    * `get_price()`
+  
+```python
+>>> from PyOLP import PyOLP
+>>> p = PyOLP()
+
+>>> product = p.get_product('171')
+
 >>> product.id
 u'171'
 >>> product.age
@@ -54,20 +118,27 @@ u'0314e'
 u'Canadian Rich & Rare'
 >>> product.status
 u''
+```
 
->>> price = product.get_price()
->>> price.amount
-6.4
->>> print(price.created_at)
-2012-09-23 23:59:53.057700
->>> print(price.effective_date)
-2012-10-01 00:00:00
->>> price.id
-u'171'
->>> print(price.modified_at)
-2012-09-23 23:59:53.057717
+* `Store`
+    * `address`
+    * `address_raw`
+    * `county`
+    * `hours_raw`
+    * `id`
+    * `key`
+    * `latitude`
+    * `longitude`
+    * `name`
+    * `phone`
+    * `resource_uri`
+
+```python
+>>> from PyOLP import PyOLP
+>>> p = PyOLP()
 
 >>> store = p.get_store('243')
+
 >>> store.id
 u'243'
 >>> store.address
@@ -89,6 +160,8 @@ u'Willamina Liquor'
 >>> store.phone
 u'(503) 876-2112'
 ```
+
+
 ## Credit
 
 Special thanks to all the fantastic developers who worked on 
