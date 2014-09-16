@@ -19,4 +19,4 @@ from .main_class import PyOLP
 from .api_exceptions import BadAttributeException, ApiException
 from .api_objects import NotSet, Price, Product, Store
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'

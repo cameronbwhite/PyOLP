@@ -18,6 +18,7 @@
 from . import api_exceptions
 from .api_objects import NotSet, Price, Product, Store
 from .requester import Requester
+from .paginated import PaginatedList
 
 DEFAULT_BASE_URL = "http://www.oregonliquorprices.com"
 

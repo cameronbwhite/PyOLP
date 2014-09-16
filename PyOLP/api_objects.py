@@ -300,7 +300,7 @@ class Product(ApiObject):
         headers, data = self._requester.requestJsonAndCheck(
             '/api/v1/price/' + str(self.id) + '/'
         )
-        return price.Price(self._requester, headers, data)
+        return Price(self._requester, headers, data)
 
     def _initAttributes(self):
         self._age = NotSet
